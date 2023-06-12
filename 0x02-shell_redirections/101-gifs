@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -name '*.gif' -printf "%f\n" | sed 's/.gif$//' | LC_ALL=C sort -f --key=1,1 --field-separator=_ && echo
+find . -name \*.gif -type f -printf "%f\n" | LC_COLLATE=C sort --ignore-case | rev | cut -c 5- | rev
